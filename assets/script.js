@@ -49,6 +49,6 @@ for (var key in schedule) {
 
     $("[data-time=" + key + "]")
     .find('.description')
-    .val(schedule[key])
+    // .val(schedule[key])
     .addClass(timeClass);
 }
