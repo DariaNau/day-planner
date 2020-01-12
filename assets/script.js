@@ -7,17 +7,17 @@ $("#currentDay").text(currentDate);
 $('.saveBtn').on('click', function () {
     var text = $(this).siblings(".description").val()
     var time = $(this).parent().attr("data-time")
-    console.log(time + ": " + text)
+    // console.log(time + ": " + text)
 
     schedule[time] = text;
-    console.log(schedule);
+    // console.log(schedule);
 
     var schedString = JSON.stringify(schedule);
     localStorage.setItem('schedule', schedString)
-})
-
+});
 
 var storageSchedule = localStorage.getItem('schedule');
+
 if (storageSchedule) {
     schedule = JSON.parse(storageSchedule);
 } else {
@@ -25,8 +25,16 @@ if (storageSchedule) {
 }
 console.log(schedule)
 
+
+
+
+
+
+
+
+
 for (var key in schedule) {
-    console.log(key, schedule[key])
+    // console.log(key, schedule[key])
     var timeClass = '';
 
     if (moment(key, 'H').isBefore(now, 'hour')) {

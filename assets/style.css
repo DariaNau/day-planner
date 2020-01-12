@@ -6,10 +6,10 @@ body {
 }
 
 textarea {
+  color: #000000;
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
   border-left: 1px solid black;
   padding: 10px;
 }
@@ -24,9 +24,11 @@ textarea {
 }
 
 .description {
+  color: #000000 !important;
+  font-weight: bolder;
   white-space: pre-wrap;
   background-color: lightgrey;
-  opacity: 60%;
+  
 }
 
 .time-block {
@@ -38,6 +40,7 @@ textarea {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid lightgray;
+  opacity: 80%;
 }
 
 .hour {
