@@ -2,7 +2,6 @@ var currentDate = moment().format('MMMM Do, YYYY');
 var now = moment();
 var schedule = {};
 
-
 // show current date on the page
 
 $("#currentDay").text(currentDate);
@@ -34,21 +33,28 @@ if (storageSchedule) {
 // using "for loop" for attributes and objects and classes defined with css
 
 for (var key in schedule) {
+
     // console.log(key, schedule[key])
-    // declare empty var to fill in with class later
-    var timeClass = '';
 
     if (moment(key, 'H').isBefore(now, 'hour')) {
-        timeClass = "past";
+        $("[data-time=" + key + "]")
+
+        //target input of the task field's value and add the class
+
+            .find('.description')
+            .val(schedule[key])
+            .addClass("past");
     }
     else if (moment(key, 'H').isAfter(now, 'hour')) {
-        timeClass = "future"
+        $("[data-time=" + key + "]")
+            .find('.description')
+            .val(schedule[key])
+            .addClass("future");
     }
-    else (moment(key, 'H').isSame(now, 'hour')) 
-        timeClass = "present"
-
-    $("[data-time=" + key + "]")
-    .find('.description')
-    .val(schedule[key])
-    .addClass(timeClass);
+    else if (moment(key, 'H').isSame(now, 'hour')) {
+        $("[data-time=" + key + "]")
+            .find('.description')
+            .val(schedule[key])
+            .addClass("present") 
+}
 }
