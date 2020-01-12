@@ -13,7 +13,7 @@ Near the top of the calendar, the application displays the current day. Addition
 
 ## Installation
 
-Please visit the deployed project at:
+Please visit the deployed project at: https://darianau.github.io/day-planner/.
 
 
 ## Usage
