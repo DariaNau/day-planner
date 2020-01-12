@@ -2,37 +2,35 @@ var currentDate = moment().format('MMMM Do, YYYY');
 var now = moment();
 var schedule = {};
 
+// show current date on the page
+
 $("#currentDay").text(currentDate);
+
+//onclick event for each save button
 
 $('.saveBtn').on('click', function () {
     var text = $(this).siblings(".description").val()
     var time = $(this).parent().attr("data-time")
     // console.log(time + ": " + text)
-
     schedule[time] = text;
     // console.log(schedule);
-
     var schedString = JSON.stringify(schedule);
     localStorage.setItem('schedule', schedString)
 });
+
+//if local storage have data - get it and Json parse it back to the textarea (and if empty - do nothing)
 
 var storageSchedule = localStorage.getItem('schedule');
 
 if (storageSchedule) {
     schedule = JSON.parse(storageSchedule);
 } else {
-    console.log("Nothing in local storage")
+    console.log("Nothing is saved in local storage.")
 }
-console.log(schedule)
 
+// colorcoding: change color of the textarea depending on it's time condition (past, present, or future).
 
-
-
-
-
-
-
-
+// using "for loop" for attributes and objects and classes defined with css
 for (var key in schedule) {
     // console.log(key, schedule[key])
     var timeClass = '';
@@ -49,81 +47,6 @@ for (var key in schedule) {
         .val(schedule[key])
         .addClass(timeClass)
 }
-
-
-
-
-
-
-
-
-// $(".saveBtn").on('click', function () {
-
-
-//     if (storedTodos !== null) {
-//         todos = storedTodos;
-//       }
-
-
-//     $("textarea").each(function () {
-//         var taskId = $(this).attr('id');
-//         var value = $(this).val();
-//         localStorage.setItem(taskId, value);
-//         var getValue = localStorage.getItem(taskId);
-//         $(this).val(getValue);
-
-//     });
-// });
-
-// $buttons.click (function() {
-//     var inputID = $(".userInput").attr("id");
-//     var inputVal = $(".userInput").val();
-//     inputArr[inputID] = inputVal;
-//     var inputString = (JSON.stringify(inputArr[inputID]));
-//     localStorage.setItem([inputID],inputString);
-//     console.log(inputString);
-// });
-
-// function returnInput(){
-//     var getInput = localStorage.getItem(inputID);
-//     var gotInput = JSON.parse(getInput);
-//     console.log(gotInput);
-// }
-
-// returnInput();
-
-
-// var table = document.getElementsByTagName('table')[0],
-//     rows = table.getElementsByTagName('tr'),
-//     text = 'textContent' in document ? 'textContent' : 'innerText';
-
-// for (var i = 0, len = rows.length; i < len; i++){
-//     rows[i].children[0][text] = i + ': ' + rows[i].children[0][text];
-// }
-
-// var newRow = $("<tr>").addClass("row");
-// var hourCol = $("<td>").addClass("hour");
-// var taskCol = $("<td><input></input></td>").addClass("description");
-// var saveCol = $("<td>").addClass("saveBtn");
-
-// newRow.append(hourCol, taskCol, saveCol);
-// $(".container .hour").append(newRow);
-
-
-// onclick save button logging input to localStorage (even after reload)
-
-// color - moment === 9am or 10 am 
-
-
-
-
-// var hours = [];
-// hours.push(moment({hour, minute: 0}).format('h:mm A'));
-// console.log(hours);
-
-// currenDate = currentDate.add(60, 'minutes');
-
-
 
 
 
