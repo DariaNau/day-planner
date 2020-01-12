@@ -41,6 +41,7 @@ textarea {
   height: 80px;
   border-top: 1px solid lightgray;
   opacity: 80%;
+  margin: 1px;
 }
 
 .hour {
