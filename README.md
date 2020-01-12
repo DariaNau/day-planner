@@ -20,7 +20,7 @@ Please visit the deployed project at:
 
 Poor time management can result in missed meetings and deadlines or create the appearance of unprofessionalism. A daily planner allows employees to see their day at a glance, schedule time effectively, and improve productivity.
 
-![day-planner](/assets/Annotation 2020-01-11 203310.jpg)
+![day-planner](/assets/Annotation.jpg)
 
 #### User Story
 
