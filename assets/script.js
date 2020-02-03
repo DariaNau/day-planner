@@ -34,7 +34,7 @@ if (storageSchedule) {
 
 for (var key in schedule) {
 
-    // console.log(key, schedule[key])
+    console.log(key, schedule[key])
 
     if (moment(key, 'H').isBefore(now, 'hour')) {
         $("[data-time=" + key + "]")
