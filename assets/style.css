@@ -27,7 +27,7 @@ textarea {
   color: #000000 !important;
   font-weight: bolder;
   white-space: pre-wrap;
-  background-color:  rgba(28, 19, 158, 0.3);
+  background-color:  rgba(28, 19, 158, 0.164);
   
 }
 
@@ -63,7 +63,7 @@ textarea {
 }
 
 .present {
-  background-color: #61fff7;
+  background-color: #fca038e8;
   color: white;
 }
 
@@ -76,7 +76,7 @@ textarea {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color:  lightseagreen;
+  background-color:  rgb(33, 124, 120);
   color: white;
 }
 
