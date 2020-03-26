@@ -26,8 +26,10 @@ var storageSchedule = localStorage.getItem('schedule');
 if (storageSchedule) {
     schedule = JSON.parse(storageSchedule);
 } else {
+    for (let i = 0; i <= 17; i++){
+    schedule[i] = ''
     console.log("Nothing is saved in local storage.")
-}
+}};
 
 // colorcoding: change color of the textarea depending on it's time condition (past, present, or future).
 // using "for loop" for attributes and objects and classes defined with css
